@@ -1,0 +1,124 @@
+---
+const {
+  titel,
+  beskrivelse,
+  deluxe,
+  variant,
+  bud,
+  udløbstid,
+  varenr,
+  showroom,
+} = Astro.props;
+import "../styles/global.css";
+import Button from "../components/Button.astro";
+---
+
+<article data-variant={variant}>
+  <div>
+    <img width="400" src="/img/jagpic.webp" alt="picture of an jaguar" />
+  </div>
+  <div class="content">
+    <h4 class="titel">{titel}</h4>
+    <div class="showroomdiv">
+      <h5>Showroom:</h5><p class="showroom">{showroom}</p>
+    </div>
+    <p>
+      {beskrivelse}
+    </p>
+    <div class="tid_vare">
+      <h5 class="udl_h5">Udløbstid:</h5>
+      <p class="udl_varenr">{udløbstid}</p>
+
+      <h5 class="vare_h5">Varenr:</h5>
+      <p class="udl_varenr">{varenr}</p>
+    </div>
+    {deluxe == true && <p>Deluxe</p>}
+  </div>
+  <div class="NB">
+    <div class="bud">
+      <p>Næste bud:</p>
+      <h4>{bud}</h4>
+    </div>
+    <div class="h5vur">
+      <p class="vur">Vurdering:</p>
+      <h4 class="h5vur">{bud}</h4>
+    </div>
+    <Button />
+  </div>
+</article>
+
+<style>
+  .showroom {
+    margin-left: 2%;
+    font-size: small;
+  }
+
+  .showroomdiv {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .udl_h5 {
+    font-weight: bold;
+  }
+  .vare_h5 {
+    font-weight: bold;
+  }
+  .tid_vare {
+    margin-top: 19%;
+    display: flex;
+    align-items: baseline;
+    font-size: x-small;
+  }
+
+  .titel {
+    font-weight: 900;
+  }
+
+  .udl_varenr {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .budp {
+    margin-left: 0%;
+  }
+  .time,
+  .varenr {
+    display: flex;
+    align-items: baseline;
+  }
+
+  article {
+    padding: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .content {
+    margin-top: 10%;
+    margin-left: 10%;
+  }
+  .bud,
+  .vur {
+    font-weight: 700;
+    font-size: x-small;
+  }
+  .h5vur {
+    font-weight: 100;
+  }
+
+  img {
+    /* padding: 2%; */
+  }
+  .NB {
+    margin-top: 10%;
+    margin-left: 20%;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  [data-variant="primary"] {
+    background-color: var(--primary-card-bg);
+  }
+</style>
