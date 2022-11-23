@@ -12,26 +12,17 @@ const {
   showroom,
 } = Astro.props;
 import "../styles/global.css";
-import Button from "../components/Button.astro";
+import ButtonGalleri from "../components/ButtonGalleri.astro";
 ---
 
-<article data-variant={variant}>
-  <img height="300" src="/img/jagpic.webp" alt="picture of an jaguar" />
+<article>
+  <img
+    style="object-fit: cover ;"
+    src="/img/jagpic.webp"
+    alt="picture of an jaguar"
+  />
   <div class="content">
     <h4 class="titel">{titel}</h4>
-    <div class="showroomdiv">
-      <h5>Showroom:</h5><p class="showroom">{showroom}</p>
-    </div>
-    <p>
-      {beskrivelse}
-    </p>
-    <div class="tid_vare">
-      <h5 class="udl_h5">Udløbstid:</h5>
-      <p class="udl_varenr">{udlobstid}</p>
-
-      <h5 class="vare_h5">Varenr:</h5>
-      <p class="udl_varenr">{varenr}</p>
-    </div>
   </div>
   <div class="NB">
     <div class="bud">
@@ -42,8 +33,22 @@ import Button from "../components/Button.astro";
       <p class="vur">Vurdering:</p>
       <h4 class="h5vur">{bud}</h4>
     </div>
-    <Button />
   </div>
+  <p class="beskrivelse">
+    {beskrivelse}
+  </p>
+  <ButtonGalleri />
+  <div class="showroomdiv">
+    <h5>Showroom:</h5><p class="showroom">{showroom}</p>
+  </div>
+  <div class="tid_vare">
+    <h5 class="vare_h5">Varenr:</h5>
+    <p class="udl_varenr">{varenr}</p>
+
+    <h5 class="udl_h5">Udløbstid:</h5>
+    <p class="udl_varenr">{udlobstid}</p>
+  </div>
+
   {
     deluxe == true && (
       <div class="icon">
@@ -68,6 +73,16 @@ import Button from "../components/Button.astro";
 </article>
 
 <style>
+  .beskrivelse {
+    margin-left: var(--spacing-20);
+    margin-right: var(--spacing-20);
+    margin-top: var(--spacing-20);
+  }
+  .NB {
+    display: flex;
+    gap: 20%;
+    margin-left: var(--spacing-20);
+  }
   .icon {
     position: absolute;
     margin-top: 1%;
@@ -77,11 +92,14 @@ import Button from "../components/Button.astro";
     font-weight: bold;
   }
   article {
+    width: 30%;
+
     border-radius: 10px;
+    background-color: var(--primary-card-bg);
   }
 
   img {
-    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
     border-top-left-radius: 10px;
   }
   .showroom {
@@ -92,6 +110,7 @@ import Button from "../components/Button.astro";
   .showroomdiv {
     display: flex;
     align-items: baseline;
+    margin-left: var(--spacing-20);
   }
 
   .udl_h5 {
@@ -101,14 +120,18 @@ import Button from "../components/Button.astro";
     font-weight: bold;
   }
   .tid_vare {
-    margin-top: 19%;
+    margin-top: 0%;
     display: flex;
+    margin-left: var(--spacing-20);
     align-items: baseline;
     font-size: x-small;
   }
 
   .titel {
     font-weight: 900;
+    margin-left: var(--spacing-20);
+    margin-bottom: var(--spacing-10);
+    margin-top: var(--spacing-10);
   }
 
   .udl_varenr {
@@ -126,13 +149,11 @@ import Button from "../components/Button.astro";
 
   article {
     padding: 0px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
   }
 
   .content {
-    margin-top: 10%;
-    margin-left: 10%;
   }
   .bud,
   .vur {
@@ -146,15 +167,7 @@ import Button from "../components/Button.astro";
   img {
     /* padding: 2%; */
   }
-  .NB {
-    margin-top: 10%;
-    margin-left: 20%;
-    gap: 5px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  [data-variant="primary"] {
+  . [data-variant="primary"] {
     background-color: var(--primary-card-bg);
   }
 </style>

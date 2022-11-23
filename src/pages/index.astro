@@ -1,5 +1,6 @@
 ---
 import Card from "../components/Card.astro";
+import GalleriCard from "../components/GalleriCard.astro";
 ---
 
 <html lang="en">
@@ -11,15 +12,102 @@ import Card from "../components/Card.astro";
     <title>Astro</title>
   </head>
   <body>
-    <h1>Astro</h1>
+    <h1 style="margin-left: 8%;">Lauritz components</h1>
+    <h3 style="margin-left: 8%; margin-top: 3%;">
+      Dette er vores card components til listeview
+    </h3>
+    <Card
+      titel="Jaguar XJ12 serie III"
+      showroom="DK, Herlev"
+      beskrivelse="Jaguar XJ12 serie III, Sovereign. Årg. 1990 Blålakeret. 5,3 l. motor. Km. stand 230.640. Automatgear. Læs mere"
+      variant="primary"
+      bud="DKK 15.000"
+      udlobstid=" 17-11-2022 19:18"
+      varenr="6301697"
+    />
     <Card
       titel="Jaguar XJ12 serie III"
       showroom="DK, Herlev"
       beskrivelse="Jaguar XJ12 serie III, Sovereign. Årg. 1990 Blålakeret. 5,3 l. motor. Km. stand 230.640. Automatgear.  Læs mere"
       variant="primary"
       bud="DKK 15.000"
-      udlobstid=" 10 dage 1 minut 36 sekunder"
+      udlobstid=" 17-11-2022 19:18"
+      varenr="6301697"
+      hammerslag={true}
+    />
+    <Card
+      deluxe={true}
+      titel="Jaguar XJ12 serie III"
+      showroom="DK, Herlev"
+      beskrivelse="Jaguar XJ12 serie III, Sovereign. Årg. 1990 Blålakeret. 5,3 l. motor. Km. stand 230.640. Automatgear.  Læs mere"
+      variant="primary"
+      bud="DKK 15.000"
+      udlobstid=" 17-11-2022 19:18"
       varenr="6301697"
     />
+    <Card
+      nyvare={true}
+      titel="Jaguar XJ12 serie III"
+      showroom="DK, Herlev"
+      beskrivelse="Jaguar XJ12 serie III, Sovereign. Årg. 1990 Blålakeret. 5,3 l. motor. Km. stand 230.640. Automatgear.  Læs mere"
+      variant="primary"
+      bud="DKK 15.000"
+      udlobstid=" 17-11-2022 19:18"
+      varenr="6301697"
+    />
+
+    <h3 style="margin-left: 8%; margin-top: 3%;">
+      Dette er vores card components til galleriview
+    </h3>
+    <div class="Galleri">
+      <GalleriCard
+        titel="Jaguar XJ12 serie III"
+        showroom="DK, Herlev"
+        beskrivelse="Jaguar XJ12 serie III, Sovereign. Årg. 1990 Blålakeret. 5,3 l. motor. Km. stand 230.640. Automatgear.  Læs mere"
+        variant="primary"
+        bud="DKK 15.000"
+        udlobstid=" 17-11-2022 19:18"
+        varenr="6301697"
+      />
+      <GalleriCard
+        nyvare={true}
+        titel="Jaguar XJ12 serie III"
+        showroom="DK, Herlev"
+        beskrivelse="Jaguar XJ12 serie III, Sovereign. Årg. 1990 Blålakeret. 5,3 l. motor. Km. stand 230.640. Automatgear.  Læs mere"
+        variant="primary"
+        bud="DKK 15.000"
+        udlobstid=" 17-11-2022 19:18"
+        varenr="6301697"
+      />
+      <GalleriCard
+        deluxe={true}
+        titel="Jaguar XJ12 serie III"
+        showroom="DK, Herlev"
+        beskrivelse="Jaguar XJ12 serie III, Sovereign. Årg. 1990 Blålakeret. 5,3 l. motor. Km. stand 230.640. Automatgear.  Læs mere"
+        variant="primary"
+        bud="DKK 15.000"
+        udlobstid=" 17-11-2022 19:18"
+        varenr="6301697"
+      />
+      <GalleriCard
+        hammerslag={true}
+        titel="Jaguar XJ12 serie III"
+        showroom="DK, Herlev"
+        beskrivelse="Jaguar XJ12 serie III, Sovereign. Årg. 1990 Blålakeret. 5,3 l. motor. Km. stand 230.640. Automatgear.  Læs mere"
+        variant="primary"
+        bud="DKK 15.000"
+        udlobstid=" 17-11-2022 19:18"
+        varenr="6301697"
+      />
+    </div>
   </body>
+
+  <style>
+    .Galleri {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 8%;
+    }
+  </style>
 </html>

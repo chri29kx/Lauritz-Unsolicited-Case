@@ -35,10 +35,10 @@
   --red-200: #f5c0b2;
   --red-100: #ffe0d8;
   --red-100: #ffe0d8;
-  --creme-200: #eee8e0;
+  --grey-200: #fafafa;
   --creme-100: #fff9f1;
 
-  --primary-card-bg: var(--creme-200);
+  --primary-card-bg: var(--grey-200);
   --secondary-card-bg: var(--creme-100);
 }
 
